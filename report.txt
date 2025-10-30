@@ -1,0 +1,30 @@
+| Issue | Type | Line(s) | Description | Fix Approach |
+|-------|------|---------|-------------|--------------|
+| eval usage | Security | 59 | Use of eval function found in code | Removed eval and directly wrote the code |
+| Bare except | Exception Handling | 19-20 | Exception handler without specific exception type | Added specific exception types and error messages |
+| Unused import | Import | 2 | Logging module imported but not used | Removed unused logging import |
+| Missing module docstring | Documentation | 1 | Module lacks proper documentation | Added comprehensive module docstring |
+| camelCase function names | Naming Convention | Multiple | Function names not following snake_case | Converted all functions to snake_case (addItem → add_item, etc.) |
+| Missing function docstrings | Documentation | Multiple | Functions lack proper documentation | Added comprehensive docstrings to all functions |
+| Dangerous default value | Mutable Default | 8 | Mutable list [] as default argument | Changed to None and initialize inside function |
+| % string formatting | Code Style | 12 | Old-style string formatting used | Replaced with f-strings for better performance |
+| Missing encoding | File Operations | 26, 32 | File operations without explicit encoding | Added encoding="utf-8" parameter |
+| Manual file handling | Resource Management | 26-29, 32-34 | Manual open/close instead of context managers | Used with statements for proper resource management |
+| Broad exception handling | Exception Handling | Multiple | Catching generic Exception instead of specific types | Replaced with specific OSError/IOError handling |
+| Missing main guard | Code Structure | 62 | Script execution without proper main guard | Added if __name__ == "__main__" guard |
+| Poor variable names | Naming Convention | Multiple | Single letter variables (i) used in loops | Improved to descriptive names (item_name) |
+| Global statement warning | Code Quality | 27 | Global statement usage flagged | Added pylint disable comment where necessary |
+| No type validation | Input Validation | Multiple | Functions don't validate input parameter types | Added isinstance() checks for all parameters |
+| No value validation | Input Validation | Multiple | Functions don't validate input values | Added checks for empty strings, negative values |
+| No sign checks | Business Logic | Multiple | No validation for negative quantities | Added sign validation for add/remove operations |
+| No range validation | Business Logic | Multiple | No checks for sufficient stock before removal | Added stock availability validation |
+| Poor file error handling | Error Handling | Multiple | Basic file operation error handling | Enhanced with specific error types and messages |
+| No data structure validation | Data Validation | Multiple | No validation of loaded JSON structure | Added comprehensive JSON data validation |
+| No return value consistency | API Design | Multiple | Functions don't return consistent success indicators | All functions now return boolean success values |
+| Poor error messages | User Experience | Multiple | Generic or missing error messages | Added detailed, user-friendly error messages |
+| Unnecessary elif after return | Control Flow | Multiple | elif used after return statements | Removed unnecessary elif, changed to if statements |
+| Unnecessary else after return | Control Flow | Multiple | else used after return statements | Removed unnecessary else statements |
+| Trailing whitespace | Code Formatting | Multiple | Extra whitespace at end of lines | Removed all trailing whitespace |
+| Too many return statements | Function Complexity | Multiple | Functions have more than 6 return statements | Refactored to single return point using success flags |
+| Complex validation logic | Code Organization | Multiple | Validation scattered throughout functions | Created helper functions and consolidated logic |
+
